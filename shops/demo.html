@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./jquery.js"></script>
+<style>
+
+    li{
+        border:1px solid red;
+        width:90px;
+        height: 5cm;
+        float: left;
+        list-style:none;
+    }
+
+</style>
+<body>
+    <!--<input type="button" id="demo" onclick='demo()' value="tijiao"><span name="span">d</span>-->
+<!--<br/>-->
+    <!--<ul style="width: 990px;height: 10px;margin: 5px;">-->
+        <!--<li class="li"></li>-->
+        <!--<li class="li"></li>-->
+        <!--<li class="li"></li>-->
+    <!--</ul>-->
+<div id="div">
+    姓名<input type="text"><input type="button" value="提交" id="name">
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $('#name').click(function(){
+          $("#div").after('<div class="div1">姓名<input type="text"><input type="button" value="提交" class="name"><input type="button" class="del" value="删除"></div>')
+            $(document).on('click','.name',function(){
+                $(this).parent().after('<div>姓名<input type="text"><input type="button" value="提交" class="name"><input type="button" class="del" value="删除" ></div>')
+            })
+            $(document).on('click','.del',function(){
+                $(this).parent().next().remove();
+            })
+        });
+
+
+    })
+
+//        function demo(){
+//            var id=document.getElementById("demo");
+//            var span=document.getElementsByName('span')[0];
+//           // console.log(span);
+//            span.innerHTML="你好"
+//            id.style.color='red';
+//
+//        }
+$(function(){
+    $(".li").click(function(){
+      $(".li").css("background","white");
+        $(this).css("background",'red')
+    })
+})
+
+</script>
+<!--<html>-->
+<!--<body>-->
+
+<!--<p id="p1">Hello World!</p>-->
+
+<!--<script>-->
+    <!--document.getElementById("p1").innerHTML="New text!";-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
